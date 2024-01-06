@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+        if (top !== window) {
+            top.location.href = window.location.href;
+        }
+        if (window.location.hash) {
+            window.location.href = window.location.href.replace(window.location.hash, '');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prueba BD</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            padding: 5x;
+            border: 1px solid #ccc;
+        }
+        .left,
+        .right {
+            display: flex;
+            align-items: center;
+        }
+        .left h2 {
+            margin-left: 10px;
+        }
+        .center {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+        .center h2 {
+            margin: 10px;
+        }
+        .containerleft {
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            padding: 5px 30px;             
+            border: 1px solid #ccc;
+        }
+        .conteinerback{
+            background-color: #D6D4D4;
+        }
+        .btnCrear{
+            background-color: #79BAC1;
+            margin-bottom: 10px; 
+            margin-top: 10px;
+            padding: 5px 20px;        
+        }
+        .centercc{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        h1,h2,h3,h4{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <div class="left">
+            <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\logo.png" height="45">
+            <h2>eventiia</h2>
+        </div>
+        <div class="center">
+            <h2>Inicio</h2>
+            <h2>Eventos</h2>
+        </div>
+        <div class="right">
+            <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\user.png" height="25">
+        </div>
+    </div>
+    <div class="container">
+        <div class="containerleft">
+            <h3 class="centercc">DD/MM/AAAA</h3>
+            <input type="text" id="texto" name="texto" class="centercc">
+            <div class="left">
+                <img class="app-icon" src="img\user.png" height="25">
+                <h4>&nbsp;&nbsp;Tus eventos</h4>
+            </div>
+            <div class="left">
+                <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\not.png" height="25">
+                <h4>&nbsp;&nbsp;Notificaciones</h4>
+            </div>
+            <div class="left" >
+                <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\redes.png" height="25">
+                <h4>&nbsp;&nbsp;Redes sociales</h4>
+            </div>
+            <div class="centercc">
+                <button style="font-family: sans-serif;" name="btnCrear" class="btnCrear">Crear Evento</button>
+            </div>
+            <div>
+                <h3>Categoria</h3>
+            </div>
+                <div class="left" >
+                    <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\arte.png" height="25">
+                    <h4>&nbsp;&nbsp;Arte</h4>
+                </div>
+                <div class="left" >
+                    <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\comida.png" height="25">
+                    <h4>&nbsp;&nbsp;Comidas</h4>
+                </div>
+                <div class="left" >
+                    <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\juego.png" height="25">
+                    <h4>&nbsp;&nbsp;Videojuegos</h4>
+                </div>
+                <div class="left" >
+                    <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\beb.png" height="25">
+                    <h4>&nbsp;&nbsp;Bebidas</h4>
+                </div>
+                <div class="left" >
+                    <img class="app-icon" src="c:\Users\camil\OneDrive\Documentos\depor.png" height="25">
+                    <h4>&nbsp;&nbsp;Deportes</h4>
+                </div>
+        </div>
+        <div class="conteinerback">
+            
+        </div>
+    </div>
+</body>
+</html>
