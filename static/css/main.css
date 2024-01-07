@@ -6,6 +6,50 @@
     padding: 5x;
     border: 1px solid #ccc;
 }
+.containercc {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5x;
+    border: 1px solid #ccc;
+}
+.containerModal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 5x;
+    border: 1px solid #ccc;
+    background-color: #ACACAC;
+}
+.containerNBorder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.centerccText label{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+.containerBorder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 5x;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.leftModal,
+.rightModal {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
 .left,
 .right {
     display: flex;
@@ -13,6 +57,9 @@
 }
 .left h2 {
     margin-left: 10px;
+}
+.center button{
+    margin-right: 10px;
 }
 .center {
     display: flex;
@@ -39,13 +86,68 @@
     margin-top: 10px;
     padding: 5px 20px;        
 }
+.marginImg{
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .centercc{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-
-.h1, .h2, .h3, .h4{
+.containerNBorder input{
+    margin-right: 5px;
+}
+.centerccText{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.centerccText input{
+    border: none;
+}
+.containerNBorder div{
+    margin-right: 5px;
+}
+.centercr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+h1, h2, h3, h4{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.caja-texto:focus {
+    border-color: #0e1011; 
+}
+.caja-texto {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+.opacity {
+    opacity: 0.6; 
+}
+.centerccText input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+.textTot{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    
+}
+#modalCreate::backdrop{
+    background-color: rgba(0, 0, 0, .55);
 }
