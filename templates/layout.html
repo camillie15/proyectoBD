@@ -16,7 +16,7 @@
     <link rel="stylesheet" href=" {{ url_for('static', filename='css/main.css') }} ">
 </head>
 <body>
-    <div class="container" >
+    <div class="containerRow" >
         <div class="left">
             <img class="app-icon" src=" {{ url_for('static', filename='img/logo.png') }} " height="45">
             <h2>eventiia</h2>
@@ -29,10 +29,10 @@
             <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
         </div>
     </div>
-    <div class="container">
-        <div class="containerleft">
-            <h3 class="centercc">DD/MM/AAAA</h3>
-            <input type="text" id="texto" name="texto" class="centercc">
+    <div class="containerRow">
+        <div class="containerLeft">
+            <h3 class="containerCenter">DD/MM/AAAA</h3>
+            <input type="text" id="texto" name="texto" class="containerCenter">
             <div class="left">
                 <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
                 <h4>&nbsp;&nbsp;Tus eventos</h4>
@@ -45,10 +45,10 @@
                 <img class="app-icon" src=" {{ url_for('static', filename='img/redes.png') }} " height="25">
                 <h4>&nbsp;&nbsp;Redes sociales</h4>
             </div>
-            <div class="centercc">
-                <button id="btnModalCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btnCrear">Crear Nuevo Evento</button>
+            <div class="containerCenter">
+                <button id="btnModalCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btn">Crear Nuevo Evento</button>
                 <dialog id="modalCreate">
-                    <div class="containercc">
+                    <div class="containerColumn">
                         <div class="containerModal">
                             <div class="leftModal">
                             </div>
@@ -60,11 +60,11 @@
                                 <img id="closeModal" class="app-icon" src=" {{ url_for('static', filename='img/close.png') }} " height="25">
                             </div>
                         </div>
-                        <div class="container">
+                        <div class="containerRow">
                             <div class="left">
                                 <div>
-                                    <img class="app-icon" src=" {{ url_for('static', filename='img/imagen.png') }} " height="250">
-                                    <div class="containerNBorder">
+                                    <img class="app-icon" src=" {{ url_for('static', filename='img/imagen.png') }} " height="200">
+                                    <div class="containerWithoutBorder">
                                         <div class="left">
                                         </div>
                                         <div class="center">
@@ -76,61 +76,71 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="centerccText">
-                                <div class="containerNBorder">
-                                    <input id="idEvento" type="text" class="caja-texto" placeholder="Codigo">
-                                    <input id="nameEvento" type="text" class="caja-texto" placeholder="Nombre del evento">
+                            <div class="containerTextBox">
+                                <div class="containerWithoutBorder">
+                                    <input id="idEvento" type="text" class="textBox" placeholder="Codigo">
+                                    <input id="nameEvento" type="text" class="textBox" placeholder="Nombre del evento">
                                 </div>
-                                <div class="containerNBorder">
-                                    <input id="idEvento" type="text" class="caja-texto" placeholder="Presencial o virtual">
+                                <div class="containerWithoutBorder">
+                                    <input id="idEvento" type="text" class="textBox" placeholder="Presencial o virtual">
                                 </div>
-                                <div class="containerNBorder">
-                                    <div class="containerBorder">
+                                <div class="containerWithoutBorder">
+                                    <div class="containerRow containerBorder">
                                         <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
-                                        <div class="centerccText">
+                                        <div class="containerTextBox">
                                             <label class="opacity">Fecha de inicio:</label>
-                                            <input id="date1" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                                            <input id="date1" type="text" placeholder="DD/MM/AAAA">
                                         </div>
                                     </div>
-                                    <div class="containerBorder">
+                                    <div class="containerRow containerBorder">
                                         <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
-                                        <div class="centerccText">
+                                        <div class="containerTextBox">
                                             <label class="opacity">Hora de inicio:</label>
-                                            <input id="time1" type="text" class="textNBorder" placeholder="HH:MM">
+                                            <input id="time1" type="text" placeholder="HH:MM">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="containerNBorder">
-                                    <div class="containerBorder">
+                                <div class="containerWithoutBorder">
+                                    <div class="containerRow containerBorder">
                                         <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
-                                        <div class="centerccText">
+                                        <div class="containerTextBox">
                                             <label class="opacity">Fecha de Fin:</label>
-                                            <input id="date2" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                                            <input id="date2" type="text" placeholder="DD/MM/AAAA">
                                         </div>
                                     </div>
-                                    <div class="containerBorder">
+                                    <div class="containerRow containerBorder">
                                         <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
-                                        <div class="centerccText">
+                                        <div class="containerTextBox">
                                             <label class="opacity">Hora de Fin:</label>
-                                            <input id="time2" type="text" class="textNBorder" placeholder="HH:MM">
+                                            <input id="time2" type="text" placeholder="HH:MM">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="centerccText">
-                            <div class="containerNBorder">
-                                <input id="descriptionEvento" type="text" class="textTot" placeholder="Descripcion">
+                        <div class="containerTextBox">
+                            <div class="containerWithoutBorder">
+                                <input id="descriptionEvento" type="text" class="textBox" placeholder="Descripcion">
                             </div>
-                            <div class="containerNBorder">
-                                <input id="categoryEvento" type="text" class="caja-texto" placeholder="Categoria">
-                                <input id="clasificationEvento" type="text" class="caja-texto" placeholder="Clasificacion privada o publica">
-                                <input id="aditionals" type="text" class="caja-texto" placeholder="Adicionales">
+                            <div class="containerWithoutBorder">
+                                <input id="categoryEvento" type="text" class="textBox" placeholder="Categoria">
+                                <input id="clasificationEvento" type="text" class="textBox" placeholder="Clasificacion privada o publica">
+                                <input id="aditionals" type="text" class="textBox" placeholder="Adicionales">
                             </div>
-                            <div class="containerNBorder">
-                                <input id="organizadores" type="text" class="caja-texto" placeholder="Organizadores">
-                                <input id="invitados" type="text" class="caja-texto" placeholder="Invitados">
+                            <div class="containerWithoutBorder">
+                                <input id="organizadores" type="text" class="textBox" placeholder="Organizadores">
+                                <input id="invitados" type="text" class="textBox" placeholder="Invitados">
                             </div>
+                        </div>
+                    </div>
+                    <div class="containerRow" >
+                        <div class="left">
+                        </div>
+                        <div class="center">
+                            <button id="btnCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btn">CREAR EVENTO</button>
+                            <button id="btnCloseCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btn">CANCELAR</button>
+                        </div>
+                        <div class="right">
                         </div>
                     </div>
                 </dialog>
@@ -159,9 +169,9 @@
                     <h4>&nbsp;&nbsp;Deportes</h4>
                 </div>
         </div>
-        <div class="conteinerback">
+        <div class="containerBackChangeable">
             {% block content %}
-
+                
             {% endblock %}
         </div>
     </div>
@@ -175,6 +185,12 @@
         });
 
         closeModal.addEventListener("click", () => {
+            modalCreate.close();
+        });
+        btnCreate.addEventListener("click", () => {
+            modalCreate.close();
+        });
+        btnCloseCreate.addEventListener("click", () => {
             modalCreate.close();
         });
     </script>
