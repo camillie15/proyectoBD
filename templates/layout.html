@@ -9,23 +9,24 @@
             window.location.href = window.location.href.replace(window.location.hash, '');
         }
     </script>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Prueba BD</title>
-    <link rel="stylesheet" href="..\static\css\main.css">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/main.css') }} ">
 </head>
 <body>
     <div class="container" >
         <div class="left">
-            <img class="app-icon" src="..\img\logo.png" height="45">
+            <img class="app-icon" src=" {{ url_for('static', filename='img/logo.png') }} " height="45">
             <h2>eventiia</h2>
         </div>
         <div class="center">
             <h2>Inicio</h2>
             <h2>Eventos</h2>
         </div>
-        <div class="right">
-            <img class="app-icon" src="..\img\user.png" height="25">
+        <div class="rightModal">
+            <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
         </div>
     </div>
     <div class="container">
@@ -33,48 +34,149 @@
             <h3 class="centercc">DD/MM/AAAA</h3>
             <input type="text" id="texto" name="texto" class="centercc">
             <div class="left">
-                <img class="app-icon" src="..\img\user.png" height="25">
+                <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
                 <h4>&nbsp;&nbsp;Tus eventos</h4>
             </div>
             <div class="left">
-                <img class="app-icon" src="..\img\not.png" height="25">
+                <img class="app-icon" src=" {{ url_for('static', filename='img/not.png') }} " height="25">
                 <h4>&nbsp;&nbsp;Notificaciones</h4>
             </div>
             <div class="left" >
-                <img class="app-icon" src="..\img\redes.png" height="25">
+                <img class="app-icon" src=" {{ url_for('static', filename='img/redes.png') }} " height="25">
                 <h4>&nbsp;&nbsp;Redes sociales</h4>
             </div>
             <div class="centercc">
-                <button style="font-family: sans-serif;" name="btnCrear" class="btnCrear">Crear Evento</button>
+                <button id="btnModalCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btnCrear">Crear Nuevo Evento</button>
+                <dialog id="modalCreate">
+                    <div class="containercc">
+                        <div class="containerModal">
+                            <div class="leftModal">
+                            </div>
+                            <div class="center">
+                                <h2>Crear Evento</h2>
+                            </div>
+                            <div class="rightModal">
+                                
+                                <img id="closeModal" class="app-icon" src=" {{ url_for('static', filename='img/close.png') }} " height="25">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="left">
+                                <div>
+                                    <img class="app-icon" src=" {{ url_for('static', filename='img/imagen.png') }} " height="250">
+                                    <div class="containerNBorder">
+                                        <div class="left">
+                                        </div>
+                                        <div class="center">
+                                            <button>Elegir un gif</button>
+                                            <button>Subir</button>
+                                        </div>
+                                        <div class="right">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centerccText">
+                                <div class="containerNBorder">
+                                    <input id="idEvento" type="text" class="caja-texto" placeholder="Codigo">
+                                    <input id="nameEvento" type="text" class="caja-texto" placeholder="Nombre del evento">
+                                </div>
+                                <div class="containerNBorder">
+                                    <input id="idEvento" type="text" class="caja-texto" placeholder="Presencial o virtual">
+                                </div>
+                                <div class="containerNBorder">
+                                    <div class="containerBorder">
+                                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
+                                        <div class="centerccText">
+                                            <label class="opacity">Fecha de inicio:</label>
+                                            <input id="date1" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                                        </div>
+                                    </div>
+                                    <div class="containerBorder">
+                                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
+                                        <div class="centerccText">
+                                            <label class="opacity">Hora de inicio:</label>
+                                            <input id="time1" type="text" class="textNBorder" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="containerNBorder">
+                                    <div class="containerBorder">
+                                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
+                                        <div class="centerccText">
+                                            <label class="opacity">Fecha de Fin:</label>
+                                            <input id="date2" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                                        </div>
+                                    </div>
+                                    <div class="containerBorder">
+                                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
+                                        <div class="centerccText">
+                                            <label class="opacity">Hora de Fin:</label>
+                                            <input id="time2" type="text" class="textNBorder" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="centerccText">
+                            <div class="containerNBorder">
+                                <input id="descriptionEvento" type="text" class="textTot" placeholder="Descripcion">
+                            </div>
+                            <div class="containerNBorder">
+                                <input id="categoryEvento" type="text" class="caja-texto" placeholder="Categoria">
+                                <input id="clasificationEvento" type="text" class="caja-texto" placeholder="Clasificacion privada o publica">
+                                <input id="aditionals" type="text" class="caja-texto" placeholder="Adicionales">
+                            </div>
+                            <div class="containerNBorder">
+                                <input id="organizadores" type="text" class="caja-texto" placeholder="Organizadores">
+                                <input id="invitados" type="text" class="caja-texto" placeholder="Invitados">
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
             </div>
             <div>
                 <h3>Categoria</h3>
             </div>
                 <div class="left" >
-                    <img class="app-icon" src="..\img\arte.png" height="25">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/arte.png') }} " height="25">
                     <h4>&nbsp;&nbsp;Arte</h4>
                 </div>
                 <div class="left" >
-                    <img class="app-icon" src="..\img\comida.png" height="25">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/comida.png') }} " height="25">
                     <h4>&nbsp;&nbsp;Comidas</h4>
                 </div>
                 <div class="left" >
-                    <img class="app-icon" src="..\img\juego.png" height="25">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/juego.png') }} " height="25">
                     <h4>&nbsp;&nbsp;Videojuegos</h4>
                 </div>
                 <div class="left" >
-                    <img class="app-icon" src="..\img\beb.png" height="25">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/beb.png') }} " height="25">
                     <h4>&nbsp;&nbsp;Bebidas</h4>
                 </div>
                 <div class="left" >
-                    <img class="app-icon" src="..\img\depor.png" height="25">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/depor.png') }} " height="25">
                     <h4>&nbsp;&nbsp;Deportes</h4>
                 </div>
         </div>
         <div class="conteinerback">
             {% block content %}
+
             {% endblock %}
         </div>
     </div>
+    <script>
+        const btnModalCreate = document.querySelector("#btnModalCreate");
+        const modalCreate = document.querySelector("#modalCreate");
+        const closeModal = document.querySelector("#closeModal");
+
+        btnModalCreate.addEventListener("click", () => {
+            modalCreate.showModal();
+        });
+
+        closeModal.addEventListener("click", () => {
+            modalCreate.close();
+        });
+    </script>
 </body>
 </html>
