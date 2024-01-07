@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+        if (top !== window) {
+            top.location.href = window.location.href;
+        }
+        if (window.location.hash) {
+            window.location.href = window.location.href.replace(window.location.hash, '');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prueba BD</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/main.css') }} ">
+</head>
+<body>
+    <div class="containercc">
+        <div class="containerModal">
+            <div class="leftModal">
+            </div>
+            <div class="center">
+                <h2>Crear Evento</h2>
+            </div>
+            <div class="rightModal">
+                <img class="app-icon" src=" {{ url_for('static', filename='img/close.png') }} " height="25">
+            </div>
+        </div>
+        <div class="container">
+            <div class="left">
+                <div>
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/imagen.png') }} " height="250">
+                    <div class="containerNBorder">
+                        <div class="left">
+                        </div>
+                        <div class="center">
+                            <button>Elegir un gif</button>
+                            <button>Subir</button>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="centerccText">
+                <div class="containerNBorder">
+                    <input id="idEvento" type="text" class="caja-texto" placeholder="Codigo">
+                    <input id="nameEvento" type="text" class="caja-texto" placeholder="Nombre del evento">
+                </div>
+                <div class="containerNBorder">
+                    <input id="idEvento" type="text" class="caja-texto" placeholder="Presencial o virtual">
+                </div>
+                <div class="containerNBorder">
+                    <div class="containerBorder">
+                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
+                        <div class="centerccText">
+                            <label class="opacity">Fecha de inicio:</label>
+                            <input id="date1" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                        </div>
+                    </div>
+                    <div class="containerBorder">
+                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
+                        <div class="centerccText">
+                            <label class="opacity">Hora de inicio:</label>
+                            <input id="time1" type="text" class="textNBorder" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="containerNBorder">
+                    <div class="containerBorder">
+                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/calendar.png') }} " height="35">
+                        <div class="centerccText">
+                            <label class="opacity">Fecha de Fin:</label>
+                            <input id="date2" type="text" class="textNBorder" placeholder="DD/MM/AAAA">
+                        </div>
+                    </div>
+                    <div class="containerBorder">
+                        <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/clock.png') }} " height="35">
+                        <div class="centerccText">
+                            <label class="opacity">Hora de Fin:</label>
+                            <input id="time2" type="text" class="textNBorder" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centerccText">
+            <div class="containerNBorder">
+                <input id="descriptionEvento" type="text" class="textTot" placeholder="Descripcion">
+            </div>
+            <div class="containerNBorder">
+                <input id="categoryEvento" type="text" class="caja-texto" placeholder="Categoria">
+                <input id="clasificationEvento" type="text" class="caja-texto" placeholder="Clasificacion privada o publica">
+                <input id="aditionals" type="text" class="caja-texto" placeholder="Adicionales">
+            </div>
+            <div class="containerNBorder">
+                <input id="organizadores" type="text" class="caja-texto" placeholder="Organizadores">
+                <input id="invitados" type="text" class="caja-texto" placeholder="Invitados">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
