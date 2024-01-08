@@ -22,8 +22,8 @@
             <h2>eventiia</h2>
         </div>
         <div class="center">
-            <h2>Inicio</h2>
-            <h2>Eventos</h2>
+            <label id="home" type="text" class="textBox"><h2>Inicio</h2></label>
+            <label id="event" type="text" class="textBox"><h2>Eventos</h2></label>
         </div>
         <div class="rightModal">
             <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
@@ -31,19 +31,25 @@
     </div>
     <div class="containerRow">
         <div class="containerLeft">
-            <h3 class="containerCenter">DD/MM/AAAA</h3>
-            <input type="text" id="texto" name="texto" class="containerCenter">
+            <h3 id="date" class="containerCenter">DD/MM/AAAA</h3>
+            <input id="busq" type="text" id="texto" name="texto" class="containerCenter">
             <div class="left">
-                <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
-                <h4>&nbsp;&nbsp;Tus eventos</h4>
+                <div id="events" class="containerTextButton">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/user.png') }} " height="25">
+                    <label><h4>&nbsp;&nbsp;Tus eventos</h4></label>
+                </div>
             </div>
             <div class="left">
-                <img class="app-icon" src=" {{ url_for('static', filename='img/not.png') }} " height="25">
-                <h4>&nbsp;&nbsp;Notificaciones</h4>
+                <div id="notifications" class="containerTextButton">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/not.png') }} " height="25">
+                <label><h4>&nbsp;&nbsp;Notificaciones</h4></label>
+                </div>
             </div>
-            <div class="left" >
-                <img class="app-icon" src=" {{ url_for('static', filename='img/redes.png') }} " height="25">
-                <h4>&nbsp;&nbsp;Redes sociales</h4>
+            <div class="left">
+                <div id="social" class="containerTextButton">
+                    <img class="app-icon" src=" {{ url_for('static', filename='img/redes.png') }} " height="25">
+                <label><h4>&nbsp;&nbsp;Redes sociales</h4></label>
+                </div>
             </div>
             <div class="containerCenter">
                 <button id="btnModalCreate" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" name="btnCrear" class="btn">Crear Nuevo Evento</button>
@@ -125,11 +131,22 @@
                             <div class="containerWithoutBorder">
                                 <input id="categoryEvento" type="text" class="textBox" placeholder="Categoria">
                                 <input id="clasificationEvento" type="text" class="textBox" placeholder="Clasificacion privada o publica">
-                                <input id="aditionals" type="text" class="textBox" placeholder="Adicionales">
+                                <div class="containerTextButton containerBorder1">
+                                    <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/add.png') }} " height="25">
+                                    <label id="aditionals" type="text" class="textBox opacity">Adicionales</label>
+                                </div>
                             </div>
                             <div class="containerWithoutBorder">
-                                <input id="organizadores" type="text" class="textBox" placeholder="Organizadores">
-                                <input id="invitados" type="text" class="textBox" placeholder="Invitados">
+                                <div></div>
+                                <div class="containerTextButton containerTotal containerBorder1">
+                                    <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/plus.png') }} " height="25">
+                                    <label id="organizadores" type="text" class="textBox opacity">Organizadores</label>
+                                </div>
+                                <div class="containerTextButton containerTotal containerBorder1">
+                                    <img class="app-icon opacity marginImg" src=" {{ url_for('static', filename='img/inv.png') }} " height="25">
+                                    <label id="invitados" type="text" class="textBox opacity">Invitados</label>
+                                </div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
@@ -148,26 +165,26 @@
             <div>
                 <h3>Categoria</h3>
             </div>
-                <div class="left" >
-                    <img class="app-icon" src=" {{ url_for('static', filename='img/arte.png') }} " height="25">
-                    <h4>&nbsp;&nbsp;Arte</h4>
-                </div>
-                <div class="left" >
-                    <img class="app-icon" src=" {{ url_for('static', filename='img/comida.png') }} " height="25">
-                    <h4>&nbsp;&nbsp;Comidas</h4>
-                </div>
-                <div class="left" >
-                    <img class="app-icon" src=" {{ url_for('static', filename='img/juego.png') }} " height="25">
-                    <h4>&nbsp;&nbsp;Videojuegos</h4>
-                </div>
-                <div class="left" >
-                    <img class="app-icon" src=" {{ url_for('static', filename='img/beb.png') }} " height="25">
-                    <h4>&nbsp;&nbsp;Bebidas</h4>
-                </div>
-                <div class="left" >
-                    <img class="app-icon" src=" {{ url_for('static', filename='img/depor.png') }} " height="25">
-                    <h4>&nbsp;&nbsp;Deportes</h4>
-                </div>
+            <div class="left" >
+                <img class="app-icon" src=" {{ url_for('static', filename='img/arte.png') }} " height="25">
+                <h4>&nbsp;&nbsp;Arte</h4>
+            </div>
+            <div class="left" >
+                <img class="app-icon" src=" {{ url_for('static', filename='img/comida.png') }} " height="25">
+                <h4>&nbsp;&nbsp;Comidas</h4>
+            </div>
+            <div class="left" >
+                <img class="app-icon" src=" {{ url_for('static', filename='img/juego.png') }} " height="25">
+                <h4>&nbsp;&nbsp;Videojuegos</h4>
+            </div>
+            <div class="left" >
+                <img class="app-icon" src=" {{ url_for('static', filename='img/beb.png') }} " height="25">
+                <h4>&nbsp;&nbsp;Bebidas</h4>
+            </div>
+            <div class="left" >
+                <img class="app-icon" src=" {{ url_for('static', filename='img/depor.png') }} " height="25">
+                <h4>&nbsp;&nbsp;Deportes</h4>
+            </div>
         </div>
         <div class="containerBackChangeable">
             {% block content %}
